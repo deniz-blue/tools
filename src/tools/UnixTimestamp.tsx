@@ -1,6 +1,6 @@
 import { Code, Group, Stack } from "@mantine/core";
 import { DateTimePicker } from "@mantine/dates";
-import { ValueCopyButton } from "../components/ValueCopyButton";
+import { ValueCopyButton } from "../../app/components/ui/ValueCopyButton";
 import { useState } from "react";
 
 export const UnixTimestamp = () => {

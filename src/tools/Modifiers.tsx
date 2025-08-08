@@ -1,6 +1,6 @@
 import { Button, Grid, Group, Paper, Stack, Text, TextInput } from "@mantine/core";
 import { useState } from "react";
-import { ValueCopyButton } from "../components/ValueCopyButton";
+import { ValueCopyButton } from "../../app/components/ui/ValueCopyButton";
 
 export const Modifiers = () => {
     const [input, setInput] = useState<string>("");

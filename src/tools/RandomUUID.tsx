@@ -1,6 +1,6 @@
 import { Code, Group } from "@mantine/core";
-import { ValueCopyButton } from "../components/ValueCopyButton";
-import { ActionButtonWithTooltip } from "../components/ActionButtonWithTooltip";
+import { ValueCopyButton } from "../../app/components/ui/ValueCopyButton";
+import { ActionButton } from "../../app/components/ui/ActionButton";
 import { IconReload } from "@tabler/icons-react";
 import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
@@ -13,7 +13,7 @@ export const RandomUUID = () => {
             <Code>{UUID}</Code>
             <Group justify='center'>
                 <ValueCopyButton value={UUID} />
-                <ActionButtonWithTooltip
+                <ActionButton
                     label="Another, please"
                     icon={<IconReload />}
                     onClick={() => setUUID(uuidv4())}

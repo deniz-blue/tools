@@ -1,6 +1,6 @@
 import { Checkbox, Code, ColorPicker, Group, Stack, Text } from "@mantine/core";
 import { useState } from "react";
-import { ValueCopyButton } from "../components/ValueCopyButton";
+import { ValueCopyButton } from "../../app/components/ui/ValueCopyButton";
 
 export const ColorPickerTool = () => {
     const [value, setValue] = useState("#000000");

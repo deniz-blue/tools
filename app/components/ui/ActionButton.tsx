@@ -1,7 +1,7 @@
-import { Tooltip, ActionIcon, MantineColor } from '@mantine/core';
+import { Tooltip, ActionIcon, type MantineColor } from '@mantine/core';
 import React from 'react';
 
-export const ActionButtonWithTooltip = ({
+export const ActionButton = ({
     label, color, icon, onClick,
 }: {
     label: React.ReactNode;

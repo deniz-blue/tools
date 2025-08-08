@@ -1,47 +1,42 @@
 {
-  "name": "tools",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "homepage": "https://thealan404.github.io/tools",
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "@mantine/core": "^7.3.1",
-    "@mantine/dates": "^7.3.1",
-    "@mantine/form": "^7.3.1",
-    "@mantine/hooks": "^7.3.1",
-    "@tabler/icons-react": "^2.43.0",
-    "@vitejs/plugin-react": "^4.2.1",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-qr-code": "^2.0.12",
-    "uuid": "^9.0.1",
-    "vite": "^5.0.11"
-  },
-  "devDependencies": {
-    "@types/react": "^18.2.48",
-    "@types/react-dom": "^18.2.18",
-    "postcss": "^8.4.32",
-    "postcss-preset-mantine": "^1.11.1",
-    "postcss-simple-vars": "^7.0.1"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  }
+	"private": true,
+	"type": "module",
+	"homepage": "https://tools.deniz.blue",
+	"scripts": {
+		"dev": "vite",
+		"build": "vite build",
+		"preview": "vite preview"
+	},
+	"dependencies": {
+		"@mantine/core": "^8.2.4",
+		"@mantine/dates": "^8.2.4",
+		"@mantine/form": "^8.2.4",
+		"@mantine/hooks": "^8.2.4",
+		"@mantine/spotlight": "^8.2.4",
+		"@react-router/node": "^7.8.0",
+		"@react-router/serve": "^7.8.0",
+		"@tabler/icons-react": "^2.43.0",
+		"@vitejs/plugin-react": "^4.2.1",
+		"gif.js": "^0.2.0",
+		"isbot": "^5.1.29",
+		"react": "^19.1.1",
+		"react-dom": "^19.1.1",
+		"react-qr-code": "^2.0.12",
+		"react-router": "^7.8.0",
+		"uuid": "^9.0.1",
+		"vite": "^5.0.11"
+	},
+	"devDependencies": {
+		"@react-router/dev": "^7.8.0",
+		"@types/gif.js": "^0.2.5",
+		"@types/node": "^24.2.0",
+		"@types/react": "^19.1.9",
+		"@types/react-dom": "^19.1.7",
+		"@types/uuid": "^10.0.0",
+		"postcss": "^8.4.32",
+		"postcss-preset-mantine": "^1.11.1",
+		"postcss-simple-vars": "^7.0.1",
+		"typescript": "^5.9.2",
+		"vite-tsconfig-paths": "^5.1.4"
+	}
 }
