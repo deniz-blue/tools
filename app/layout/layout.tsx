@@ -35,7 +35,7 @@ export default function Layout() {
                         rightSectionWidth="auto"
                     >
                         <Text c="dimmed">
-                            Search
+                            Search Tools
                         </Text>
                     </Input>
 

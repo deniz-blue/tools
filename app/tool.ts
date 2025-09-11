@@ -1,0 +1,14 @@
+import type { TablerIconsProps } from "@tabler/icons-react";
+import type { ComponentType, ReactNode } from "react";
+
+export interface ToolInfo {
+    id: string;
+    name?: string;
+    desc?: string;
+    hidden?: boolean;
+    icon?: ComponentType<TablerIconsProps>;
+};
+
+export interface ToolModule {
+    info: ToolInfo;
+};

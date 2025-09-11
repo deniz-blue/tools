@@ -25,6 +25,10 @@ export const links: Route.LinksFunction = () => [
     },
 ];
 
+export const meta: Route.MetaFunction = () => [
+    { title: "Deniz's Tools" },
+];
+
 export function Layout({ children }: { children: React.ReactNode }) {
     return (
         <html lang="en" {...mantineHtmlProps}>
