@@ -3,9 +3,9 @@
 	"type": "module",
 	"homepage": "https://tools.deniz.blue",
 	"scripts": {
-		"dev": "vite",
-		"build": "vite build",
-		"preview": "vite preview"
+		"build": "react-router build",
+		"dev": "react-router dev",
+		"start": "react-router-serve ./build/server/index.js"
 	},
 	"dependencies": {
 		"@mantine/core": "^8.2.4",
