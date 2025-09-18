@@ -1,10 +1,11 @@
 import { Code, Group, Table, Text } from "@mantine/core";
 import { ValueCopyButton } from "./ValueCopyButton";
+import type { ReactNode } from "react";
 
 export const ResultsTable = ({
     data,
 }: {
-    data: ([string, string] | null)[];
+    data: ([ReactNode, string] | null)[];
 }) => {
     return (
         <Table
@@ -15,10 +16,16 @@ export const ResultsTable = ({
                         {key}
                     </Text>,
                     <Group w="100%" justify="end">
-                        <Code>
-                            {value}
-                        </Code>
-                        <ValueCopyButton value={value} />
+                        {value ? (
+                            <Code>
+                                {value}
+                            </Code>
+                        ) : (
+                            <Text fz="sm" c="dimmed" inline>
+                                {"<empty>"}
+                            </Text>
+                        )}
+                        <ValueCopyButton value={value} disabled={!value} />
                     </Group>
                 ]),
             }}

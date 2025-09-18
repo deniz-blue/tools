@@ -1,14 +1,35 @@
-import { Container, Paper, Stack } from "@mantine/core";
-import { Outlet } from "react-router";
+import { Box, Container, Divider, Group, Paper, Stack, Text } from "@mantine/core";
+import { Outlet, useLocation } from "react-router";
+import { TOOL_MODULES } from "../tools";
 
 export default function ToolLayout() {
+    const { pathname } = useLocation();
+
+    const module = Object.values(TOOL_MODULES).find(x => x.info.id == pathname.slice(1));
+    const info = module?.info;
+    const Icon = info?.icon || Box;
+
     return (
         <Container>
-            <Paper bg="dark" p="md">
-                <Stack w="100%" align="stretch">
-                    <Outlet />
+            <Stack gap={2}>
+                <Stack gap={2} align="flex-start" w="auto">
+                    <Group gap={4} justify="flex-start" w="auto">
+                        <Icon size={18} />
+                        <Text fz="xs" fw="bold" inline span tt="uppercase">
+                            {info?.name}
+                        </Text>
+                    </Group>
                 </Stack>
-            </Paper>
+                <Paper
+                    bg="dark"
+                    p="md"
+                    radius="md"
+                >
+                    <Stack w="100%" align="stretch">
+                        <Outlet />
+                    </Stack>
+                </Paper>
+            </Stack>
         </Container>
     )
 }

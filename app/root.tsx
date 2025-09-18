@@ -11,6 +11,7 @@ import { Box, Code, Container, mantineHtmlProps, MantineProvider, Text, Title } 
 
 import '@mantine/core/styles.css';
 import '@mantine/spotlight/styles.css';
+import '@mantine/dates/styles.css';
 
 export const links: Route.LinksFunction = () => [
     { rel: "preconnect", href: "https://fonts.googleapis.com" },

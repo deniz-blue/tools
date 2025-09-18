@@ -2,7 +2,13 @@ import { CopyButton } from '@mantine/core';
 import { IconCopy } from '@tabler/icons-react';
 import { ActionButton } from "./ActionButton";
 
-export const ValueCopyButton = ({ value }: { value?: string; }) => {
+export const ValueCopyButton = ({
+    value,
+    disabled,
+}: {
+    value?: string;
+    disabled?: boolean;
+}) => {
     return (
         <CopyButton value={value || ""}>
             {({ copied, copy }) => (
@@ -11,6 +17,7 @@ export const ValueCopyButton = ({ value }: { value?: string; }) => {
                     icon={<IconCopy />}
                     onClick={copy}
                     color={copied ? "green" : undefined}
+                    disabled={disabled}
                 />
             )}
         </CopyButton>
