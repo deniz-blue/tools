@@ -41,6 +41,9 @@ importers:
       isbot:
         specifier: ^5.1.29
         version: 5.1.29
+      qr:
+        specifier: ^0.5.2
+        version: 0.5.2
       react:
         specifier: ^19.1.1
         version: 19.1.1
@@ -1299,6 +1302,10 @@ packages:
 
   qr.js@0.0.0:
     resolution: {integrity: sha512-c4iYnWb+k2E+vYpRimHqSu575b1/wKl4XFeJGpFmrJQz5I88v9aY2czh7s0w36srfCM1sXgC/xpoJz5dJfq+OQ==}
+
+  qr@0.5.2:
+    resolution: {integrity: sha512-91M3sVlA7xCFpkJtYX5xzVH8tDo4rNZ7jr8v+1CRgPVkZ4D+Vl9y8rtZWJ/YkEUM6U/h0FAu5W/JAK7iowOteA==}
+    engines: {node: '>= 20.19.0'}
 
   qs@6.13.0:
     resolution: {integrity: sha512-+38qI9SOr8tfZ4QmJNplMUxqjbe7LKvvZgWdExBOmd+egZTtjLB67Gu0HRX3u/XOq7UU2Nx6nsjvS16Z9uwfpg==}
@@ -2921,6 +2928,8 @@ snapshots:
       ipaddr.js: 1.9.1
 
   qr.js@0.0.0: {}
+
+  qr@0.5.2: {}
 
   qs@6.13.0:
     dependencies:
