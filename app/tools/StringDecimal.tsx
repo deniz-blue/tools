@@ -3,10 +3,12 @@ import type { ToolInfo } from "../tool";
 import { Stack, Text } from "@mantine/core";
 import { StringInput } from "../components/input/StringInput";
 import { ResultsTable } from "../components/ui/ResultsTable";
+import { IconFileText } from "@tabler/icons-react";
 
 export const info: ToolInfo = {
     id: "string-decimal",
     name: "String to/from Decimal",
+    icon: IconFileText,
 };
 
 export default function StringDecimal() {

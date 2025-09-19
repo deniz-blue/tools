@@ -3,10 +3,12 @@ import type { ToolInfo } from "../tool";
 import { StringInput } from "../components/input/StringInput";
 import { ResultsTable } from "../components/ui/ResultsTable";
 import { useState } from "react";
+import { IconFileText } from "@tabler/icons-react";
 
 export const info: ToolInfo = {
     id: "string-hex",
     name: "String to/from Hex",
+    icon: IconFileText,
 };
 
 const hexDecode = (s: string) => {

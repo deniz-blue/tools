@@ -29,6 +29,7 @@ export const AppSpotlight = () => {
             actions={[
                 ...toolActions,
             ]}
+            scrollable
         />
     )
 };

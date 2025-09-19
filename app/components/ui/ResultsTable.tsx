@@ -1,11 +1,13 @@
-import { Code, Group, Table, Text } from "@mantine/core";
+import { Code, Group, Table, Text, type CodeProps } from "@mantine/core";
 import { ValueCopyButton } from "./ValueCopyButton";
 import type { ReactNode } from "react";
 
 export const ResultsTable = ({
     data,
+    valueProps,
 }: {
     data: ([ReactNode, string] | null)[];
+    valueProps?: CodeProps;
 }) => {
     return (
         <Table
@@ -17,7 +19,7 @@ export const ResultsTable = ({
                     </Text>,
                     <Group w="100%" justify="end">
                         {value ? (
-                            <Code>
+                            <Code {...valueProps}>
                                 {value}
                             </Code>
                         ) : (
