@@ -1,8 +1,10 @@
 import { IconClock, IconPlayerPause, IconPlayerPlay, IconPlayerStop, IconX } from "@tabler/icons-react";
 import type { ToolInfo } from "../tool";
-import { Button, CopyButton, Group, Stack, Text } from "@mantine/core";
+import { Button, CopyButton, Group, SimpleGrid, Stack, Tabs, Text } from "@mantine/core";
 import { useEffect, useRef, useState } from "react";
 import { ValueCopyButton } from "../components/ui/ValueCopyButton";
+import { useListState } from "@mantine/hooks";
+import { ResultsTable } from "../components/output/ResultsTable";
 
 export const info: ToolInfo = {
     id: "stopwatch",
@@ -10,21 +12,30 @@ export const info: ToolInfo = {
     icon: IconClock,
 };
 
+interface Stage {
+
+};
+
+const fmt = (elapsed: number) => {
+    const h = Math.floor(elapsed / (1000 * 60 * 60));
+    const m = Math.floor(elapsed / (1000 * 60)) % 60;
+    const s = Math.floor(elapsed / (1000)) % 60;
+    const ms = Math.floor(elapsed) % 1000;
+    return `${[h, m, s].map(x => x.toString().padStart(2, "0")).join(":")}.${ms.toString().padStart(3, "0")}`;
+};
+
 export default function StopwatchToolPage() {
     const displayRef = useRef<HTMLDivElement>(null);
     const [state, setState] = useState<"reset" | "start" | "pause">("reset");
+    const [mode, setMode] = useState<"marks" | "stages">("marks");
+    const [marks, { append: addMark, setState: setMarks }] = useListState<number>([]);
+    const [stages,] = useListState<Stage>([]);
 
     const startTime = useRef<number>(0);
     const storedTime = useRef<number>(0);
 
     const getElapsed = () => startTime.current ? (performance.now() - startTime.current) : storedTime.current;
-    const fmt = (elapsed: number) => {
-        const h = Math.floor(elapsed / (1000 * 60 * 60));
-        const m = Math.floor(elapsed / (1000 * 60)) % 60;
-        const s = Math.floor(elapsed / (1000)) % 60;
-        const ms = elapsed % 1000;
-        return `${[h, m, s].map(x => x.toString().padStart(2, "0")).join(":")}.${ms.toString().padStart(3, "0")}`;
-    };
+
     const raf = useRef<number>(null);
     const updateDisplay = () => {
         const elapsed = getElapsed();
@@ -55,6 +66,7 @@ export default function StopwatchToolPage() {
         startTime.current = 0;
         setState("reset");
         updateDisplay();
+        // setMarks([]);
     };
 
     const pause = () => {
@@ -78,16 +90,15 @@ export default function StopwatchToolPage() {
                     >
                         00:00:00.000
                     </Text>
-                    {state == "pause" && (
-                        <ValueCopyButton
-                            {...{
-                                // hack
-                                get value() {
-                                    return fmt(getElapsed());
-                                }
-                            }}
-                        />
-                    )}
+                    <ValueCopyButton
+                        disabled={state !== "pause"}
+                        {...{
+                            // hack... i dont think it actually works but oh well
+                            get value() {
+                                return fmt(getElapsed());
+                            }
+                        }}
+                    />
                 </Group>
 
                 <Group>
@@ -121,6 +132,53 @@ export default function StopwatchToolPage() {
                         Reset
                     </Button>
                 </Group>
+            </Stack>
+
+            <Stack>
+                <Tabs allowTabDeactivation>
+                    <Tabs.List justify="center" mb="xs">
+                        <Tabs.Tab value="marks">
+                            Marks
+                        </Tabs.Tab>
+                        <Tabs.Tab value="stages" disabled>
+                            Stages
+                        </Tabs.Tab>
+                    </Tabs.List>
+                    <Tabs.Panel value="marks">
+                        <Stack align="center">
+                            <Stack maw="30rem">
+                                <SimpleGrid cols={{ base: 1, sm: 2 }} spacing="xs">
+                                    <Button
+                                        variant="light"
+                                        color="blue"
+                                        // leftSection={<IconPlayerStop />}
+                                        onClick={() => addMark(getElapsed())}
+                                        disabled={state == "reset"}
+                                        fullWidth
+                                    >
+                                        Add Mark
+                                    </Button>
+                                    <Button
+                                        variant="light"
+                                        color="red"
+                                        onClick={() => setMarks([])}
+                                        disabled={!marks.length}
+                                        fullWidth
+                                    >
+                                        Clear
+                                    </Button>
+                                </SimpleGrid>
+
+                                <ResultsTable
+                                    data={marks.map(mark => [fmt(mark), mark.toString()] as const)}
+                                />
+                            </Stack>
+                        </Stack>
+                    </Tabs.Panel>
+                </Tabs>
+
+
+
             </Stack>
         </Stack>
     )
