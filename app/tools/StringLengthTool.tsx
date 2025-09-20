@@ -1,7 +1,7 @@
 import { Code, Group, Stack, Text } from "@mantine/core";
 import { useState } from "react"
 import { StringInput } from "../components/input/StringInput";
-import { ResultsTable } from "../components/ui/ResultsTable";
+import { ResultsTable } from "../components/output/ResultsTable";
 import type { ToolInfo } from "../tool";
 import { IconLetterCase } from "@tabler/icons-react";
 

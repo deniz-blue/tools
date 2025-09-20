@@ -1,12 +1,11 @@
 import { Box, Container, Divider, Group, Paper, Stack, Text } from "@mantine/core";
 import { Outlet, useLocation } from "react-router";
-import { TOOL_MODULES } from "../tools";
+import { TOOLS_LIST } from "../tools";
 
 export default function ToolLayout() {
     const { pathname } = useLocation();
 
-    const module = Object.values(TOOL_MODULES).find(x => x.info.id == pathname.slice(1));
-    const info = module?.info;
+    const info = Object.values(TOOLS_LIST).find(x => x.id == pathname.slice(1));
     const Icon = info?.icon || Box;
 
     return (

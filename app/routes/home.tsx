@@ -1,11 +1,11 @@
 import { Box, Button, Container, Group, Paper, Stack, Text, Title } from "@mantine/core";
 import { spotlight } from "@mantine/spotlight";
-import { TOOL_MODULES } from "../tools";
+import { TOOLS_LIST } from "../tools";
 import { Link } from "react-router";
 import { IconTool } from "@tabler/icons-react";
 
 export default function HomePage() {
-    const tools = Object.values(TOOL_MODULES).map(x => x.info).filter(x => x && !x.hidden);
+    const tools = Object.values(TOOLS_LIST).filter(x => x && !x.hidden);
 
     return (
         <Container>

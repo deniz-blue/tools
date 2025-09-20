@@ -5,7 +5,7 @@ import { useState } from "react";
 import { useAsyncFn } from "../hooks/utils/useAsyncFn";
 import { IconMapPin, IconWorldPin } from "@tabler/icons-react";
 import { PermissionNugget } from "../components/ui/PermissionNugget";
-import { ResultsTable } from "../components/ui/ResultsTable";
+import { ResultsTable } from "../components/output/ResultsTable";
 
 export const info: ToolInfo = {
     id: "geolocation",

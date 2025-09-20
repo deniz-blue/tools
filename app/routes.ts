@@ -1,8 +1,8 @@
 import { type RouteConfig, index, layout, route } from "@react-router/dev/routes";
-import { TOOL_MODULES } from "./tools";
+import { TOOLS_LIST } from "./tools";
 
-const toolRoutes = Object.entries(TOOL_MODULES).map(([filePath, mod]) => (
-    route(mod.info.id, filePath)
+const toolRoutes = Object.entries(TOOLS_LIST).map(([filePath, info]) => (
+    route(info.id, filePath)
 ));
 
 export default [

@@ -1,5 +1,5 @@
 import { Code, Group, Table, Text, type CodeProps } from "@mantine/core";
-import { ValueCopyButton } from "./ValueCopyButton";
+import { ValueCopyButton } from "../ui/ValueCopyButton";
 import type { ReactNode } from "react";
 
 export const ResultsTable = ({

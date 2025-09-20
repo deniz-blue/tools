@@ -2,7 +2,7 @@ import { useState } from "react";
 import type { ToolInfo } from "../tool";
 import { Checkbox, ColorPicker, Stack, parseColor } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
-import { ResultsTable } from "../components/ui/ResultsTable";
+import { ResultsTable } from "../components/output/ResultsTable";
 import { IconPalette } from "@tabler/icons-react";
 
 export const info: ToolInfo = {

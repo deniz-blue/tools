@@ -1,5 +1,6 @@
-import type { ToolModule } from "./tool";
+import type { ToolInfo, ToolModule } from "./tool";
 
-export const TOOL_MODULES = import.meta.glob("./tools/*.tsx", {
+export const TOOLS_LIST = import.meta.glob("./tools/*.tsx", {
     eager: true,
-}) as Record<string, ToolModule>;
+    import: "info",
+}) as Record<string, ToolInfo>;

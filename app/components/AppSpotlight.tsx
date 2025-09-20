@@ -1,30 +1,30 @@
 import { Spotlight } from "@mantine/spotlight";
 import { useMemo } from "react";
 import { useNavigate } from "react-router";
-import { TOOL_MODULES } from "../tools";
+import { TOOLS_LIST } from "../tools";
 import { IconTool } from "@tabler/icons-react";
 
 export const AppSpotlight = () => {
     const navigate = useNavigate();
 
     const toolActions = useMemo(() => {
-        return Object.values(TOOL_MODULES).filter(mod => !mod.info.hidden).map((mod) => {
-            const Icon = mod.info.icon || IconTool;
+        return Object.values(TOOLS_LIST).filter(info => !info.hidden).map((info) => {
+            const Icon = info.icon || IconTool;
 
             return {
-                id: mod.info.id,
-                label: mod.info.name || mod.info.id,
-                description: mod.info.desc,
-                onClick: () => navigate("/" + mod.info.id),
+                id: info.id,
+                label: info.name || info.id,
+                description: info.desc,
+                onClick: () => navigate("/" + info.id),
                 leftSection: <Icon />,
             };
         })
-    }, [TOOL_MODULES]);
+    }, [TOOLS_LIST]);
 
     return (
         <Spotlight
             searchProps={{
-                placeholder: `Search ${Object.values(TOOL_MODULES).filter(mod => !mod.info.hidden).length} tools...`,
+                placeholder: `Search ${Object.values(TOOLS_LIST).filter(info => !info.hidden).length} tools...`,
             }}
             actions={[
                 ...toolActions,

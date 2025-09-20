@@ -4,7 +4,8 @@ import { ValueCopyButton } from "../../app/components/ui/ValueCopyButton";
 import { DateTimePicker } from "@mantine/dates";
 import type { ToolInfo } from "../tool";
 import { IconMessageCode } from "@tabler/icons-react";
-import { ResultsTable } from "../components/ui/ResultsTable";
+import { ResultsTable } from "../components/output/ResultsTable";
+import { TimestampInput } from "../components/input/TimestampInput";
 
 export const info: ToolInfo = {
     id: "discord-timestamp",
@@ -85,9 +86,9 @@ const findRelativeUnit = (timestamp: number) => {
 const tsmd = (ts: number, sx: string) => `<t:${ts.toString().substring(0, ts.toString().length - 3)}:${sx}>`;
 
 export default function DiscordTimestampGenerator() {
-    const [value, setValue] = useState(new Date());
+    const [value, setValue] = useState(Date.now());
 
-    let utcTimestamp = new Date(value.getTime() + new Date().getTimezoneOffset() * 60000).getTime();
+    let utcTimestamp = new Date(value + new Date().getTimezoneOffset() * 60000).getTime();
 
     const data: [string, string][] = [];
 
@@ -110,11 +111,9 @@ export default function DiscordTimestampGenerator() {
 
     return (
         <Stack align="center">
-            <DateTimePicker
-                label="Date/Time"
+            <TimestampInput
                 value={value}
-                onChange={(v) => v && setValue(new Date(v))}
-                withSeconds
+                onChange={setValue}
             />
             <ResultsTable
                 data={data}

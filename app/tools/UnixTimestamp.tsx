@@ -3,7 +3,8 @@ import { DateTimePicker } from "@mantine/dates";
 import { useState } from "react";
 import type { ToolInfo } from "../tool";
 import { IconTimeDuration0 } from "@tabler/icons-react";
-import { ResultsTable } from "../components/ui/ResultsTable";
+import { ResultsTable } from "../components/output/ResultsTable";
+import { TimestampInput } from "../components/input/TimestampInput";
 
 export const info: ToolInfo = {
     id: "unix-timestamp",
@@ -12,27 +13,22 @@ export const info: ToolInfo = {
 };
 
 export default function UnixTimestamp() {
-    const [value, setValue] = useState(new Date());
+    const [value, setValue] = useState(Date.now());
 
-    const output = value.getTime().toString();
+    const date = new Date(value);
 
     return (
         <Stack align="center">
-            <DateTimePicker
-                label="Date/Time"
+            <TimestampInput
                 value={value}
-                onChange={(v) => v && setValue(new Date(v))}
-                withSeconds
+                onChange={setValue}
             />
-            <Button
-                variant="light"
-                onClick={() => setValue(new Date())}
-            >
-                Use Current Time
-            </Button>
             <ResultsTable
                 data={[
-                    ["Timestamp", output],
+                    ["Timestamp", value.toString()],
+                    ["ISO", date.toISOString()],
+                    ["Date#toDateString", date.toDateString()],
+                    ["Date#toTimeString", date.toTimeString()],
                 ]}
             />
         </Stack>

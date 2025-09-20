@@ -3,7 +3,7 @@ import { Box, Button, Divider, Group, Loader, Stack, Text, Tooltip } from "@mant
 import { useWebPermission } from "../hooks/web/useWebPermission";
 import { useState, type ReactNode } from "react";
 import { useAsyncFn } from "../hooks/utils/useAsyncFn";
-import { ResultsTable } from "../components/ui/ResultsTable";
+import { ResultsTable } from "../components/output/ResultsTable";
 import { IconCamera, IconDevices2, IconMicrophone } from "@tabler/icons-react";
 import { PermissionNugget } from "../components/ui/PermissionNugget";
 
