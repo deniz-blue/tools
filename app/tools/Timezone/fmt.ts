@@ -1,3 +1,10 @@
+import { TZ_ABBREVIATIONS, TZ_IANA } from "./data";
+
+export const isIANATimezone = (tz: string) => TZ_IANA.includes(tz);
+export const isAbbrTimezone = (tz: string) => !!TZ_ABBREVIATIONS[tz];
+export const isUTCRelative = (tz: string) => /^(UTC|GMT)([+-])(\d{1,2})(?::([0-5]\d))?$/.test(tz);
+export const isValidTimezone = (tz: string) => isIANATimezone(tz) || isUTCRelative(tz) || isAbbrTimezone(tz);
+
 export const fmtOffset = (offsetMinutes: number) => {
     const sign = offsetMinutes >= 0 ? "+" : "-";
     const abs = Math.abs(offsetMinutes);

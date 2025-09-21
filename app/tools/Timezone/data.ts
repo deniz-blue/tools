@@ -1,11 +1,8 @@
-export const TZ_INTL = Intl.supportedValuesOf("timeZone").filter(x => !x.startsWith("Etc/"));
+export const TZ_IANA = Intl.supportedValuesOf("timeZone").filter(x => !x.startsWith("Etc/"));
 
 // Common timezone abbreviations mapped to canonical IANA zones.
 // Note: many abbreviations are ambiguous, we pick a "standard" representative.
 export const TZ_ABBREVIATIONS: Record<string, string> = {
-    // UTC+-N
-    
-    
     //* from this point on, @author ChatGPT
 
     // Europe
