@@ -1,6 +1,6 @@
 import { Group, Stack, Text, Code, Select } from '@mantine/core'
 import { useState } from "react";
-import { ValueCopyButton } from "../../app/components/ui/ValueCopyButton";
+import { ValueCopyButton } from "../components/ui/ValueCopyButton";
 import { DateTimePicker } from "@mantine/dates";
 import type { ToolInfo } from "../tool";
 import { IconMessageCode } from "@tabler/icons-react";

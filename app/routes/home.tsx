@@ -20,6 +20,7 @@ export default function HomePage() {
 
                         return (
                             <Paper
+                                key={info.id}
                                 withBorder
                                 bg="dark"
                                 p="xs"
