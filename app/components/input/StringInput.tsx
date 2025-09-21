@@ -1,18 +1,16 @@
-import { Textarea } from "@mantine/core";
-import type { ReactNode } from "react";
+import { Textarea, type TextareaProps } from "@mantine/core";
 import { ValueCopyButton } from "../ui/ValueCopyButton";
+
+export interface StringInputProps {
+    value?: string;
+    onChange?: (v: string) => void;
+};
 
 export const StringInput = ({
     value,
     onChange,
     ...props
-}: {
-    value?: string;
-    onChange?: (v: string) => void;
-    label?: ReactNode;
-    description?: ReactNode;
-    placeholder?: string;
-}) => {
+}: StringInputProps & Omit<TextareaProps, keyof StringInputProps>) => {
     return (
         <Textarea
             autosize
