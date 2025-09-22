@@ -2,24 +2,26 @@ import { Code, Group, Table, Text, type CodeProps } from "@mantine/core";
 import { ValueCopyButton } from "../ui/ValueCopyButton";
 import type { ReactNode } from "react";
 
+export type Result = [ReactNode, string] | [ReactNode, string, {
+    valueProps?: CodeProps;
+}];
+
 export const ResultsTable = ({
     data,
-    valueProps,
 }: {
-    data: ([ReactNode, string] | null)[];
-    valueProps?: CodeProps;
+    data: (Result | null)[];
 }) => {
     return (
         <Table
             w="100%"
             data={{
-                body: data.filter(x => x !== null).map(([key, value]) => [
+                body: data.filter(x => x !== null).map(([key, value, extra = {}]) => [
                     <Text>
                         {key}
                     </Text>,
                     <Group w="100%" justify="end">
                         {value ? (
-                            <Code {...valueProps}>
+                            <Code {...(extra.valueProps || {})}>
                                 {value}
                             </Code>
                         ) : (

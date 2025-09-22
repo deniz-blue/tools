@@ -1,5 +1,4 @@
-import { Anchor, Box, Button, Container, Divider, Group, Paper, SimpleGrid, Space, Stack, Text, Title } from "@mantine/core";
-import { spotlight } from "@mantine/spotlight";
+import { Anchor, Container, Divider, Group, Paper, SimpleGrid, Space, Stack, Text, Title } from "@mantine/core";
 import { TOOLS_LIST } from "../tools";
 import { Link } from "react-router";
 import { IconDevices2, IconExternalLink, IconFileText, IconLetterCase, IconTool } from "@tabler/icons-react";

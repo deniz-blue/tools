@@ -1,7 +1,7 @@
 import { Stack } from "@mantine/core";
 import type { ToolInfo } from "../tool";
 import { StringInput } from "../components/input/StringInput";
-import { ResultsTable } from "../components/output/ResultsTable";
+import { ResultsTable, type Result } from "../components/output/ResultsTable";
 import { useState } from "react";
 import { IconLetterCase } from "@tabler/icons-react";
 
@@ -88,11 +88,9 @@ export default function UnicodeTextGenerator() {
                     return [
                         gen.label,
                         replaced,
-                    ];
+                        { valueProps: { ff: "text" } },
+                    ] as Result;
                 })}
-                valueProps={{
-                    ff: "text",
-                }}
             />
         </Stack>
     )

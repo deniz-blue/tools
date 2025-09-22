@@ -17,10 +17,17 @@ export default function TimezoneTool() {
 
     return (
         <Stack>
-            <ResultsTable
-                data={[["Your Timezone is:", localTzName]]}
-                valueProps={{ fz: "lg" }}
-            />
+            <Stack>
+                <ResultsTable
+                    data={[
+                        ["Your Timezone is:", localTzName, { valueProps: { fz: "lg" } }],
+                        [
+                            "Discord Bio:",
+                            `My midnight is your <t:${Math.floor(new Date("2000-01-01T00:00").getTime() / 1000)}:t>`
+                        ],
+                    ]}
+                />
+            </Stack>
 
             <Fieldset legend="UTC-relative & Current time" bg="dark">
                 <TimezoneUTCRelative />
