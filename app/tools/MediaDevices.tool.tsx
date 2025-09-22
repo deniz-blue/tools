@@ -11,6 +11,8 @@ export const info: ToolInfo = {
     id: "media-devices",
     name: "Media Devices List",
     icon: IconDevices2,
+    desc: "Camera & Microphones list",
+    tags: ["device"],
 };
 
 export default function MediaDevicesTool() {

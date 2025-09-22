@@ -9,6 +9,7 @@ export const info: ToolInfo = {
     id: "string-hex",
     name: "String to/from Hex",
     icon: IconFileText,
+    tags: ["string", "converter"],
 };
 
 const hexDecode = (s: string) => {

@@ -9,6 +9,8 @@ export const info: ToolInfo = {
     id: "qrcode",
     name: "QR Code Generator",
     icon: IconQrcode,
+    desc: "Generate QR codes!",
+    tags: ["image"],
 };
 
 const errorCorrectionLevels: [ErrorCorrection, string][] = [

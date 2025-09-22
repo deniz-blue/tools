@@ -1,0 +1,11 @@
+.ToolCard {
+    transition: transform 0.1s;
+}
+
+.ToolCard:active {
+    transform: scale(0.9);
+}
+
+.ToolCard:hover {
+    transform: scale(1.1);
+}

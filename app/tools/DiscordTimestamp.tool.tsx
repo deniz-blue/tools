@@ -11,6 +11,7 @@ export const info: ToolInfo = {
     id: "discord-timestamp",
     name: "Discord Timestamp Markdown",
     icon: IconMessageCode,
+    tags: ["discord", "time"],
 };
 
 interface TsFormat {

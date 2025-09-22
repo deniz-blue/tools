@@ -11,6 +11,8 @@ export const info: ToolInfo = {
     id: "geolocation",
     name: "Geolocation Tool",
     icon: IconWorldPin,
+    desc: "Show your coordinates",
+    tags: ["device"],
 };
 
 export default function GeolocationTool() {

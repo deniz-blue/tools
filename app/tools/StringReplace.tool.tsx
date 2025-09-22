@@ -11,6 +11,8 @@ export const info: ToolInfo = {
     id: "string-replace",
     name: "String Replace Tool",
     icon: IconLetterCase,
+    desc: "String substitution tool",
+    tags: ["string"],
 };
 
 interface Rule {

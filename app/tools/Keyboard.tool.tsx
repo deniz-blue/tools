@@ -7,6 +7,8 @@ export const info: ToolInfo = {
     id: "keyboard",
     name: "Keyboard Tool",
     icon: IconKeyboard,
+    desc: "Show key presses",
+    tags: ["device"],
 };
 
 export default function KeyboardTool() {

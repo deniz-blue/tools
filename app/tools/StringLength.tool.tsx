@@ -9,6 +9,8 @@ export const info: ToolInfo = {
     id: "string-length",
     name: "String Length Tool",
     icon: IconLetterCase,
+    desc: "Character/Byte/Whitespace length of text",
+    tags: ["string"],
 };
 
 export default function StringLengthTool() {

@@ -9,6 +9,7 @@ export const info: ToolInfo = {
     id: "color-picker",
     name: "Color Picker",
     icon: IconPalette,
+    tags: [],
 };
 
 export default function ColorPickerTool() {

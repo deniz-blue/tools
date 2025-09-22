@@ -9,6 +9,7 @@ export const info: ToolInfo = {
     id: "string-base64",
     name: "String to/from Base64",
     icon: IconFileText,
+    tags: ["string", "converter"],
 };
 
 export default function StringBase64() {

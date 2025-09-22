@@ -10,6 +10,8 @@ export const info: ToolInfo = {
     id: "unix-timestamp",
     name: "Unix Timestamp",
     icon: IconTimeDuration0,
+    desc: "Date & Time <-> Unix Timestamp",
+    tags: ["time", "converter"],
 };
 
 export default function UnixTimestamp() {

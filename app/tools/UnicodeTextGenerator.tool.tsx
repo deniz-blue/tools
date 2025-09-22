@@ -9,6 +9,8 @@ export const info: ToolInfo = {
     id: "unicode-text",
     name: "Unicode Text Generator",
     icon: IconLetterCase,
+    desc: "Generate fancy text 𝓵𝓲𝓴𝓮 𝓽𝓱𝓲𝓼",
+    tags: ["string", "converter"],
 };
 
 const generators = [

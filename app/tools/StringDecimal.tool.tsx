@@ -9,6 +9,7 @@ export const info: ToolInfo = {
     id: "string-decimal",
     name: "String to/from Decimal",
     icon: IconFileText,
+    tags: ["string", "converter"],
 };
 
 export default function StringDecimal() {

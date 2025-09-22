@@ -9,6 +9,8 @@ export const info: ToolInfo = {
     id: "morse",
     name: "Morse Code",
     icon: IconDots,
+    desc: "Morse Code <-> Text",
+    tags: ["string", "converter"],
 };
 
 const MORSE_TO_LETTER = {

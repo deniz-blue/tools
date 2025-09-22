@@ -10,6 +10,8 @@ export const info: ToolInfo = {
     id: "stopwatch",
     name: "Stopwatch",
     icon: IconClock,
+    desc: "Measure time [now]!",
+    tags: ["time"],
 };
 
 interface Stage {

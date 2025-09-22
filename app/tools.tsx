@@ -1,4 +1,4 @@
-import type { ToolInfo, ToolModule } from "./tool";
+import type { ToolInfo } from "./tool";
 
 export const TOOLS_LIST = import.meta.glob("./tools/**/*.tool.tsx", {
     eager: true,

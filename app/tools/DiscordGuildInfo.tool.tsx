@@ -7,8 +7,10 @@ import { ResultsTable } from "../components/output/ResultsTable";
 
 export const info: ToolInfo = {
     id: "discord-guild",
-    name: "Discord Guild Info (Widget API)",
+    name: "Discord Guild Info",
     icon: IconBrandDiscord,
+    desc: "Widget API",
+    tags: ["discord"],
 };
 
 const WIDGET_DISABLED = 50004;
