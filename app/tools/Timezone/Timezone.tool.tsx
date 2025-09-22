@@ -32,7 +32,11 @@ export default function TimezoneTool() {
                 </Text>
 
                 <Text ta="center" c="dimmed" fz="sm">
-                    IANA <Code>Etc/*</Code> timezones are not included because they are confusing
+                    Timezones are case-insensitive
+                </Text>
+
+                <Text ta="center" c="dimmed" fz="sm">
+                    IANA <Code>Etc/*</Code> timezones are not included in autocomplete
                 </Text>
             </Stack>
         </Stack>
