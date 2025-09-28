@@ -96,6 +96,7 @@ export default function HomePage() {
 
                                 return (
                                     <Paper
+                                        key={info.id}
                                         bg="dark"
                                         withBorder
                                         ta="center"
