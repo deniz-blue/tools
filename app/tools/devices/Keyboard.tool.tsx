@@ -1,5 +1,5 @@
 import { Button, Code, Group, Stack, Text } from "@mantine/core";
-import type { ToolInfo } from "../tool";
+import type { ToolInfo } from "../../tool";
 import { IconKeyboard } from "@tabler/icons-react";
 import { useSet, useWindowEvent } from "@mantine/hooks";
 

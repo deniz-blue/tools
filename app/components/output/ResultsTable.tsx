@@ -16,7 +16,7 @@ export const ResultsTable = ({
             w="100%"
             data={{
                 body: data.filter(x => x !== null).map(([key, value, extra = {}]) => [
-                    <Text>
+                    <Text span>
                         {key}
                     </Text>,
                     <Group w="100%" justify="end">
@@ -25,7 +25,7 @@ export const ResultsTable = ({
                                 {value}
                             </Code>
                         ) : (
-                            <Text fz="sm" c="dimmed" inline>
+                            <Text fz="sm" c="dimmed" inline span>
                                 {"<empty>"}
                             </Text>
                         )}

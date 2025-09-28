@@ -1,11 +1,11 @@
-import type { ToolInfo } from "../tool";
+import type { ToolInfo } from "../../tool";
 import { Anchor, Box, Button, Divider, Group, Loader, Stack, Text, Tooltip } from "@mantine/core";
-import { useWebPermission } from "../hooks/web/useWebPermission";
+import { useWebPermission } from "../../hooks/web/useWebPermission";
 import { useState } from "react";
-import { useAsyncFn } from "../hooks/utils/useAsyncFn";
+import { useAsyncFn } from "../../hooks/utils/useAsyncFn";
 import { IconMapPin, IconWorldPin } from "@tabler/icons-react";
-import { PermissionNugget } from "../components/ui/PermissionNugget";
-import { ResultsTable } from "../components/output/ResultsTable";
+import { PermissionNugget } from "../../components/ui/PermissionNugget";
+import { ResultsTable } from "../../components/output/ResultsTable";
 
 // pls no steal ty
 export const GMAPS_API_KEY = "AIzaSyAb9PxKDrSJWR1YV1se28GeYzLpnNc7hZ4";

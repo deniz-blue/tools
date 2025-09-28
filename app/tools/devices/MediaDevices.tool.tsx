@@ -1,11 +1,11 @@
-import type { ToolInfo } from "../tool";
+import type { ToolInfo } from "../../tool";
 import { Box, Button, Divider, Group, Loader, Stack, Text, Tooltip } from "@mantine/core";
-import { useWebPermission } from "../hooks/web/useWebPermission";
+import { useWebPermission } from "../../hooks/web/useWebPermission";
 import { useState, type ReactNode } from "react";
-import { useAsyncFn } from "../hooks/utils/useAsyncFn";
-import { ResultsTable } from "../components/output/ResultsTable";
+import { useAsyncFn } from "../../hooks/utils/useAsyncFn";
+import { ResultsTable } from "../../components/output/ResultsTable";
 import { IconCamera, IconDevices2, IconMicrophone } from "@tabler/icons-react";
-import { PermissionNugget } from "../components/ui/PermissionNugget";
+import { PermissionNugget } from "../../components/ui/PermissionNugget";
 
 export const info: ToolInfo = {
     id: "media-devices",

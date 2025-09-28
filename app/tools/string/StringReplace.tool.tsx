@@ -1,11 +1,11 @@
 import { Box, Button, Fieldset, Group, Input, SimpleGrid, Stack, Text } from "@mantine/core";
-import type { ToolInfo } from "../tool";
-import { StringInput } from "../components/input/StringInput";
+import type { ToolInfo } from "../../tool";
+import { StringInput } from "../../components/input/StringInput";
 import { useState } from "react";
-import { StringOutput } from "../components/output/StringOutput";
+import { StringOutput } from "../../components/output/StringOutput";
 import { useListState } from "@mantine/hooks";
 import { IconLetterCase, IconX } from "@tabler/icons-react";
-import { ActionButton } from "../components/ui/ActionButton";
+import { ActionButton } from "../../components/ui/ActionButton";
 
 export const info: ToolInfo = {
     id: "string-replace",

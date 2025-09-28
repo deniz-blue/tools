@@ -1,8 +1,8 @@
 import { useState } from "react";
-import type { ToolInfo } from "../tool";
+import type { ToolInfo } from "../../tool";
 import { Stack, Text } from "@mantine/core";
-import { StringInput } from "../components/input/StringInput";
-import { ResultsTable } from "../components/output/ResultsTable";
+import { StringInput } from "../../components/input/StringInput";
+import { ResultsTable } from "../../components/output/ResultsTable";
 import { IconFileText } from "@tabler/icons-react";
 
 export const info: ToolInfo = {
