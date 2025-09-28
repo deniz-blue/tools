@@ -1,6 +1,52 @@
 import { TZ_ABBREVIATIONS } from "./data";
 import { isUTCRelative } from "./fmt";
 
+export interface DSTChange {
+    startsAt: number;
+    endsAt?: number;
+    utcOffset: number;
+};
+
+export const getTimezoneInfo = (zone: string) => {
+    const ONE_DAY = 24 * 60 * 60 * 1000;
+    const xDate = (day: number) => new Date(
+        new Date("2000-01-01T00:00Z").getTime() + ONE_DAY*day
+    );
+
+    let info: DSTChange[] = [
+        {
+            startsAt: xDate(0).getTime(),
+            utcOffset: getTimezoneOffsetMinutes(zone, xDate(0)),
+        },
+    ];
+    for (let i = 0; i < 356; i++) {
+        let date = xDate(i);
+        let offset = getTimezoneOffsetMinutes(zone, date);
+        if(offset !== info[info.length-1].utcOffset) {
+            info.push({
+                startsAt: date.getTime(),
+                utcOffset: offset,
+            });
+        }
+    }
+
+    
+    info.forEach((block, i) => {
+        if(!!info[i+1]) {
+            block.endsAt = new Date(new Date(info[i+1].startsAt).getTime() - ONE_DAY).getTime();
+        } else {
+            block.endsAt = xDate(365).getTime();
+        }
+    });
+
+    return info;
+};
+
+export const localDateToTzDate = (zone: string, date: Date = new Date()) => {
+    const localTzOffset = new Date().getTimezoneOffset();
+    return new Date(date.getTime() + localTzOffset * 60 * 1000 + getTimezoneOffsetMinutes(zone) * 60 * 1000);
+};
+
 export function getTimezoneOffsetMinutes(zone: string, date: Date = new Date()): number {
     let relativeString;
 

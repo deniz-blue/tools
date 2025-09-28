@@ -3,7 +3,7 @@ import type { ToolInfo } from "../../tool";
 import { Code, Fieldset, SimpleGrid, Stack, Text } from "@mantine/core";
 import { ResultsTable } from "../../components/output/ResultsTable";
 import { fmtOffset } from "./fmt";
-import { TimezoneUTCRelative } from "./TimezoneUTCRelative";
+import { TimezoneInfo } from "./TimezoneInfo";
 
 export const info: ToolInfo = {
     id: "timezone",
@@ -29,8 +29,8 @@ export default function TimezoneTool() {
                 />
             </Stack>
 
-            <Fieldset legend="UTC-relative & Current time" bg="dark">
-                <TimezoneUTCRelative />
+            <Fieldset legend="Timezone Information" bg="dark">
+                <TimezoneInfo />
             </Fieldset>
 
             <Stack gap={0}>
