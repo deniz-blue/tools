@@ -22,6 +22,11 @@ export const StringInput = ({
                     value={value}
                 />
             )}
+            styles={{
+                input: {
+                    padding: 4,
+                },
+            }}
             {...props}
         />
     )

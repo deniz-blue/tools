@@ -1,8 +1,8 @@
 import type { ToolInfo } from "../tool";
-import { Collapse, ColorInput, Input, SimpleGrid, Slider, Stack, Table } from "@mantine/core";
-import { useMemo, useState } from "react";
-import encodeQR, { type ErrorCorrection, type QrOpts } from "qr";
+import { Stack, Table } from "@mantine/core";
+import { useState } from "react";
 import { StringInput } from "../components/input/StringInput";
+import { InlineMath } from "../components/display/InlineMath";
 
 export const info: ToolInfo = {
     id: "measurement-errors",
@@ -13,10 +13,11 @@ export const info: ToolInfo = {
 
 export default function MeasurementErrors() {
     const [value, setValue] = useState("34,88\n35,01\n34,84\n34,87\n34,88");
-    const [tvalue, setTValue] = useState("");
+    const [tvalue, setTValue] = useState("2.78");
 
     const digits = 6;
-    const p = (x: number) => x.toFixed(digits);
+    // @ts-ignore
+    const p = (x: number) => x.toFixed(digits) / 1;
 
     const numbers = value.split("\n").map(x => Number(x.replaceAll(",", "."))).filter(x => !isNaN(x));
     const sum = numbers.reduce((a, b) => a + b, 0);
@@ -63,16 +64,23 @@ export default function MeasurementErrors() {
                 withTableBorder
                 withColumnBorders
                 ff="monospace"
+                ta="center"
+                styles={{
+                    tr: {
+                        textAlign: "center",
+                        width: "100%",
+                    },
+                }}
             >
                 <Table.Thead>
                     <Table.Tr>
                         {[
-                            "D_i",
-                            "D_avg",
-                            "Di-D_avg",
-                            "diff^2",
-                            "delta S",
-                            "delta D",
+                            <InlineMath math="a_i" />,
+                            <InlineMath math="\overline{a}" />,
+                            <InlineMath math="a_i-\overline{a}" />,
+                            <InlineMath math="(a_i-\overline{a})^2" />,
+                            <InlineMath math="\Delta S_{\overline{a}}" />,
+                            <InlineMath math="\Delta a" />,
                         ].map((v, i) => (
                             <Table.Th key={i}>
                                 {v}
