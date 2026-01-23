@@ -18,6 +18,7 @@ export interface ToolInfo {
     hidden?: boolean;
     icon?: ComponentType<IconProps>;
     tags?: Tag[];
+	featured?: boolean;
 };
 
 export interface ToolModule {

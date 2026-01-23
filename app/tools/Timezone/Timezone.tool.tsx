@@ -9,6 +9,7 @@ export const info: ToolInfo = {
     id: "timezone",
     name: "Timezone Tool",
     icon: IconTimezone,
+	featured: true,
 };
 
 export default function TimezoneTool() {

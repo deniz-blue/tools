@@ -12,6 +12,7 @@ import { Box, Code, Container, mantineHtmlProps, MantineProvider, Text, Title } 
 import '@mantine/core/styles.css';
 import '@mantine/spotlight/styles.css';
 import '@mantine/dates/styles.css';
+import '@mantine/dropzone/styles.css';
 import 'katex/dist/katex.min.css';
 
 export const links: Route.LinksFunction = () => [

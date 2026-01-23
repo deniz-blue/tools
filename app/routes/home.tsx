@@ -19,6 +19,11 @@ interface SectionConfig {
 }
 
 const sections: SectionConfig[] = [
+	{
+		name: "Featured Tools",
+		icon: <IconTool />,
+		filter: (tool) => !!tool.featured,
+	},
     {
         name: "String Converters",
         icon: <IconFileText />,
